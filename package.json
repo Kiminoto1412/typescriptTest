@@ -4,6 +4,7 @@
   "description": "",
   "main": "mergeIntArray.js",
   "scripts": {
+    "start":"nodemon runMerge.js",
     "test": "jest"
   },
   "author": "",
