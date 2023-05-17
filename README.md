@@ -3,19 +3,20 @@
 ## Get started
 
 install:
-...bash
+```bash
 https://github.com/Kiminoto1412/typescriptTest.git
 cd ./typescriptTest
 npm i
+```
 
 ## How to run
 
-...bash
+```bash
 npm start
-...
+```
 
 ## How to run unit test
 
-...bash
+```bash
 npm test
-...
+```
