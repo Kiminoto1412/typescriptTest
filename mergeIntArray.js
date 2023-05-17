@@ -3,26 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.merge = void 0;
 function merge(collection_1, collection_2) {
     var mergedCollection = collection_1.concat(collection_2);
-    var sortedMergedCollection = mergedCollection.sort(function (a, b) { return a - b; });
-    // let i = 0;
-    // let j = 0;
-    // while (i < collection_1.length && j < collection_2.length) {
-    //   if (collection_1[i] < collection_2[j]) {
-    //     mergedCollection.push(collection_1[i]);
-    //     i++;
-    //   } else {
-    //     mergedCollection.push(collection_2[j]);
-    //     j++;
-    //   }
-    // }
-    // while (i < collection_1.length) {
-    //   mergedCollection.push(collection_1[i]);
-    //   i++;
-    // }
-    // while (j < collection_2.length) {
-    //   mergedCollection.push(collection_2[j]);
-    //   j++;
-    // }
-    return sortedMergedCollection;
+    var done = false;
+    while (!done) {
+        done = true;
+        for (var i = 1; i < mergedCollection.length; i += 1) {
+            if (mergedCollection[i - 1] > mergedCollection[i]) {
+                done = false;
+                var tmp = mergedCollection[i - 1];
+                mergedCollection[i - 1] = mergedCollection[i];
+                mergedCollection[i] = tmp;
+            }
+        }
+    }
+    return mergedCollection;
 }
 exports.merge = merge;
